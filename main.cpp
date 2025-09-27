@@ -16,7 +16,7 @@
     constexpr int   SCREEN_WIDTH  = 1600,
                     SCREEN_HEIGHT = 900,
                     FPS           = 60,
-                    SIZE          = 500,
+                    SIZE          = 600,
                     SMALL         = 300;
     constexpr float MAX_AMP       = 100.0f;
 
@@ -29,7 +29,7 @@
 
     // Images
     constexpr char gun_fp[]  = "gun.png";
-    constexpr char ronaldo_fp[] = "ronaldo.jpg";
+    constexpr char ronaldo_fp[] = "ronaldo.png";
     constexpr char rockman_fp[] = "rockman.jpg";
     constexpr char background_fp[] = "background.jpg";
 
@@ -101,7 +101,7 @@
 
         L_Trans = {
             L_ORIGIN.x + 300.0f * cos(gPulseTime_slow),
-            L_ORIGIN.y + 300.0f * cos(gPulseTime_slow)
+            L_ORIGIN.y + 300.0f * cos(gPulseTime_slow+gPulseTime)
         };
 
         R_Trans = {
@@ -110,11 +110,11 @@
         };
 
         Mix_Trans = {
-            R_ORIGIN.x + 500.0f * sin(gPulseTime_slow),
+            R_ORIGIN.x + 500.0f * sin(gPulseTime),
             L_ORIGIN.x + 300.0f * cos(gPulseTime_slow)
         };
 
-        gAngle2 += 15.0f * deltaTime;
+        gAngle2 += 30.0f * deltaTime; //rotation
     }
 
     void render()
