@@ -196,6 +196,7 @@
     
 
         // Origin inside the source texture (centre of the texture)
+        // used for background
         Vector2 objectOrigin = {
             static_cast<float>(SCREEN_WIDTH) / 2.0f,
             static_cast<float>(SCREEN_HEIGHT) / 2.0f
